@@ -15,7 +15,8 @@ import { DAILY_SURPRISES, PACKING_ITEMS } from "@/lib/disneyData";
 import { soundFX } from "@/lib/soundEffects";
 
 // Target Date: July 21, 2027 at 8:00 AM local time
-const TARGET_DATE = new Date("2027-07-21T08:00:00");
+const TARGET_DATE = new Date(2027, 6, 21, 8, 0, 0);
+const MS_PER_DAY = 1000 * 60 * 60 * 24;
 
 interface TimeLeft {
   sleeps: number;
@@ -45,10 +46,14 @@ export default function DisneyCountdownApp() {
 
   useEffect(() => {
     const now = new Date();
-    const currentKey = now.toISOString().split("T")[0];
-    const dayOfYear = Math.floor(
-      (now.getTime() - new Date(now.getFullYear(), 0, 0).getTime()) / 86400000
-    );
+    const currentKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(
+      2,
+      "0"
+    )}-${String(now.getDate()).padStart(2, "0")}`;
+
+    const startOfYearUtc = Date.UTC(now.getFullYear(), 0, 1);
+    const todayUtc = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    const dayOfYear = Math.floor((todayUtc - startOfYearUtc) / MS_PER_DAY);
     const surpriseForToday = DAILY_SURPRISES[dayOfYear % DAILY_SURPRISES.length];
 
     // Load saved progress from localStorage
@@ -78,20 +83,19 @@ export default function DisneyCountdownApp() {
         return;
       }
 
-      const startOfToday = new Date(
+      // Use UTC midnights for calendar day math so Daylight Saving Time never shifts "sleeps"
+      const localTodayUtc = Date.UTC(
         currentNow.getFullYear(),
         currentNow.getMonth(),
         currentNow.getDate()
       );
-      const startOfTrip = new Date(2027, 6, 21);
-      const sleeps = Math.max(
-        0,
-        Math.round((startOfTrip.getTime() - startOfToday.getTime()) / (1000 * 60 * 60 * 24))
-      );
+      const tripDayUtc = Date.UTC(2027, 6, 21); // July 21, 2027
+      const sleeps = Math.max(0, Math.floor((tripDayUtc - localTodayUtc) / MS_PER_DAY));
 
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / 1000 / 60) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
+      const totalSeconds = Math.floor(diff / 1000);
+      const hours = Math.floor((totalSeconds / 3600) % 24);
+      const minutes = Math.floor((totalSeconds / 60) % 60);
+      const seconds = totalSeconds % 60;
 
       setTimeLeft({ sleeps, hours, minutes, seconds, isTripDay: false });
     };

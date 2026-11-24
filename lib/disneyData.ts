@@ -11,16 +11,16 @@ export interface DailySurprise {
 export const DAILY_SURPRISES: DailySurprise[] = [
     {
         character: "Mickey Mouse",
-        emoji: "\u{1F43D}",
+        emoji: "🐭",
         movie: "Mickey & Friends",
-        greeting: "Oh boy! Hot dog! You're ond day closer to seeing me!",
+        greeting: "Oh boy! Hot dog! You're one day closer to seeing me!",
         dailyQuest: "Do your biggest Mickey Mouse smile in the mirror today!",
         funFact: "Mickey's favorite snack at the parks is a Mickey-shaped ice cream bar!",
         bgGradient: "from-red-400 to-yellow-400",
     },
     {
         character: "Elsa & Olaf",
-        emoji: "\u{26c4}",
+        emoji: "⛄",
         movie: "Frozen",
         greeting: "Hi! I'm Olaf and I like warm hugs!",
         dailyQuest: "Do a twirl and pretend to shoot sparkly ice magic from your hands!",
@@ -29,7 +29,7 @@ export const DAILY_SURPRISES: DailySurprise[] = [
     },
     {
         character: "Moana",
-        emoji: "\u{1F30A}",
+        emoji: "🌊",
         movie: "Moana",
         greeting: "The ocean chose you for a magical adventure!",
         dailyQuest: "Sing your favorite song as loud as you can today!",
@@ -38,7 +38,7 @@ export const DAILY_SURPRISES: DailySurprise[] = [
     },
     {
         character: "Stitch",
-        emoji: "\u{1F47D}",
+        emoji: "👽",
         movie: "Lilo & Stitch",
         greeting: "Aloha! Ohana means family, and we're going to Disney!",
         dailyQuest: "Make your funniest silly alien face for someone in your family!",
@@ -47,7 +47,7 @@ export const DAILY_SURPRISES: DailySurprise[] = [
     },
     {
         character: "Rapunzel & Pascal",
-        emoji: "\u{1F98E}",
+        emoji: "🦎",
         movie: "Tangled",
         greeting: "Best. Day. Ever! Let's paint a picture of the castle!",
         dailyQuest: "Draw a picture of Cinderella Castle or your favorite princess!",
@@ -56,7 +56,7 @@ export const DAILY_SURPRISES: DailySurprise[] = [
     },
     {
         character: "Simba",
-        emoji: "\u{1F981}",
+        emoji: "🦁",
         movie: "The Lion King",
         greeting: "Hakuna Matata! No worries until Disney Day!",
         dailyQuest: "Let out your biggest, bravest lion ROAR!",
@@ -65,7 +65,7 @@ export const DAILY_SURPRISES: DailySurprise[] = [
     },
     {
         character: "Tinker Bell",
-        emoji: "\u{1F9DA}\u{200D}\u{2640}\u{FE0F}",
+        emoji: "🧚‍♀️",
         movie: "Peter Pan",
         greeting: "Think happy thoughts and sprinkle some pixie dust!",
         dailyQuest: "Jump as high as your can like your're flying to Neverland",
@@ -74,7 +74,7 @@ export const DAILY_SURPRISES: DailySurprise[] = [
     },
     {
         character: "Ariel",
-        emoji: "\u{1F9DC}\u{200D}\u{2640}\u{FE0F}",
+        emoji: "🧜‍♀️",
         movie: "The Little Mermaid",
         greeting: "Flip your fins-you're going to be part of our world soon!",
         dailyQuest: "Do a silly mermaid wiggle dance for 10 seconds!",
@@ -83,7 +83,7 @@ export const DAILY_SURPRISES: DailySurprise[] = [
     },
     {
         character: "Buzz Lightyear",
-        emoji: "\u{1F680}",
+        emoji: "🚀",
         movie: "Toy Story",
         greeting: "To Disney World....and BEYOND!",
         dailyQuest: "Practice your Space Ranger laser-blaster pose!",
@@ -92,7 +92,7 @@ export const DAILY_SURPRISES: DailySurprise[] = [
     },
     {
         character: "Minnie Mouse",
-        emoji: "\u{1F380}",
+        emoji: "🎀",
         movie: "Mickey & Friends",
         greeting: "Yoo-hoo! Don't forget to pack your sparkly ears!",
         dailyQuest: "Pick out your favorite colorful outfit to wear today!",
