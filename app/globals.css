@@ -5,8 +5,26 @@
   --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
 }
 
+@layer base {
+  html,
+  body {
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  button {
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
 @keyframes float {
-  0%, 100% { transform: translateY(0px);}
+  0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-8px); }
 }
 

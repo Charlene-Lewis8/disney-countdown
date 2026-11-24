@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fredoka, Nunito } from "next/font/google";
 import "./globals.css";
 
@@ -13,6 +13,15 @@ const nunito = Nunito({
   weight: ["600", "700", "800"],
   variable: "--font-nunito",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
+  themeColor: "#7dd3fc"
+};
 
 export const metadata: Metadata = {
   title: "Magical Disney Countdown!",
